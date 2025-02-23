@@ -1,42 +1,72 @@
-import { StyleSheet, Text, SafeAreaView, Platform, ScrollView } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, Platform, ScrollView, View, FlatList } from 'react-native';
 import PokemonCard from './components/PokemonCard';
 
 export default function App() {
 
-  const charmanderData = {
-    name: 'Charmander',
-    type: 'Fire',
-    hp: 39,
-    moves: ['Scratch', 'Ember', 'Growl', 'Leer'],
-    weaknesses: ['Water', 'Rock'],
-    image: require('./assets/charmander.png'),
-  }
-
-  const pikachuData = {
-    name: 'Pikachu',
-    type: 'Electric',
-    hp: 35,
-    moves: ['Thunder Shock', 'Growl', 'Tail Whip', 'Quick Attack'],
-    weaknesses: ['Ground'],
-    image: require('./assets/pikachu.png'),
-  }
-
-  const sandslashData = {
-    name: 'Sandslash',
-    type: 'Ground',
-    hp: 75,
-    moves: ['Sand Attack', 'Slash', 'Poison Sting', 'Swift'],
-    weaknesses: ['Water', 'Grass', 'Ice'],
-    image: require('./assets/sandslash.png')
-  }
+  let pokemonList = [
+    {
+      name: "Charmander",
+      type: "Fire",
+      hp: 39,
+      moves: [
+        "Scratch",
+        "Ember",
+        "Growl",
+        "Leer"
+      ],
+      weaknesses: [
+        "Water",
+        "Rock"
+      ],
+      image: require("./assets/charmander.png")
+    },
+    {
+      name: "Pikachu",
+      type: "Electric",
+      hp: 35,
+      moves: [
+        "Thunder Shock",
+        "Growl",
+        "Tail Whip",
+        "Quick Attack"
+      ],
+      weaknesses: [
+        "Ground"
+      ],
+      image: require("./assets/pikachu.png")
+    },
+    {
+      name: "Sandslash",
+      type: "Ground",
+      hp: 75,
+      moves: [
+        "Sand Attack",
+        "Slash",
+        "Poison Sting",
+        "Swift"
+      ],
+      weaknesses: [
+        "Water",
+        "Grass",
+        "Ice"
+      ],
+      image: require("./assets/sandslash.png")
+    }
+  ]
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
-      <PokemonCard {...charmanderData}/>
-      <PokemonCard {...pikachuData}/>
-      <PokemonCard {...sandslashData}/>
-      </ScrollView> 
+      {/* <ScrollView>
+        {pokemonList.map((pokemon,index) => <PokemonCard key={index} {...pokemon}/>)}
+      </ScrollView>  */}
+      <FlatList
+        data={pokemonList}
+        renderItem={({ item, index }) => <PokemonCard {...item} />}
+        // horizontal={true}
+        keyExtractor={(item, index) => index.toString()}
+        ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
+        ListEmptyComponent={() => <Text>No Pokemon Found</Text>}
+      />
     </SafeAreaView>
   );
 }

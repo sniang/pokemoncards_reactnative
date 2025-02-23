@@ -1,4 +1,5 @@
 import {View, Text, StyleSheet, Platform, Image} from 'react-native';
+import React from 'react';
 
 const getTypeDetails = (type) => {
     switch (type.toLowerCase()) {
@@ -15,8 +16,11 @@ const getTypeDetails = (type) => {
     }
   };
 
+
 export default function PokemonCard({name, type, hp, moves, weaknesses, image}) {
+
     const { borderColor, emoji } = getTypeDetails(type);
+
   return (
     <View style={styles.card}>
         <View style={styles.nameContainer}>

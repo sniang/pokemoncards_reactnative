@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Charmander",
+        "type": "Fire",
+        "hp": 39,
+        "moves": [
+            "Scratch",
+            "Ember",
+            "Growl",
+            "Leer"
+        ],
+        "weaknesses": [
+            "Water",
+            "Rock"
+        ],
+        "image": "./assets/charmander.png"
+    },
+    {
+        "name": "Pikachu",
+        "type": "Electric",
+        "hp": 35,
+        "moves": [
+            "Thunder Shock",
+            "Growl",
+            "Tail Whip",
+            "Quick Attack"
+        ],
+        "weaknesses": [
+            "Ground"
+        ],
+        "image": "./assets/pikachu.png"
+    },
+    {
+        "name": "Sandslash",
+        "type": "Ground",
+        "hp": 75,
+        "moves": [
+            "Sand Attack",
+            "Slash",
+            "Poison Sting",
+            "Swift"
+        ],
+        "weaknesses": [
+            "Water",
+            "Grass",
+            "Ice"
+        ],
+        "image": "./assets/sandslash.png"
+    }
+]
