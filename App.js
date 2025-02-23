@@ -66,6 +66,8 @@ export default function App() {
         keyExtractor={(item, index) => index.toString()}
         ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
         ListEmptyComponent={() => <Text>No Pokemon Found</Text>}
+        ListHeaderComponent={() => <Text style={{ fontSize: 24, fontWeight: 'bold', textAlign: 'center', margin: 16 }}>Pokemon List</Text>}
+        ListFooterComponent={() => <Text style={{ fontSize: 24, fontWeight: 'bold', textAlign: 'center', margin: 16 }}>End of List</Text>}
       />
     </SafeAreaView>
   );
